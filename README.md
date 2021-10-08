@@ -30,19 +30,6 @@
 - Usage: .command
 
 #### .run
-- Description: 
-- Usage:
-    1. If you don't have inputs:
-        .run
-        ```language
-            //your code
-        ```
-    2. If you have inputs:
-        .run
-        ```language
-            //your code
-        ```
-        Input1
-        Input2
-        ...
-        InputN
+- Description: run a code
+- Usage:<br/>
+![Usage](https://raw.githubusercontent.com/freitagfelipe/codez/main/medias/usageExample.png)
