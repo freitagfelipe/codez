@@ -1,10 +1,10 @@
 import discord
-from pyston import PystonClient
+from pyston import PystonClient, File
 
 piston = PystonClient()
 
 async def executeCode(arguments):
-    output = await piston.execute(arguments["Language"], arguments["Code"], stdin = "\n".join(arguments["Inputs"]) if arguments["Inputs"] else "")
+    output = await piston.execute(arguments["Language"], [File(arguments["Code"])], stdin = "\n".join(arguments["Inputs"]) if arguments["Inputs"] else "")
     output = output.raw_json["run"]["output"] if output.success == True else output.raw_json["compile"]["stderr"]
 
     return output
