@@ -15,7 +15,7 @@
 3. Download this repository.
 4. In your repository folder open a terminal and type pip install -r requirements.txt
 5. Create a .env file and paste it inside:
-    1. TOKEN=<YOUR-DISCORD-BOT-TOKEN>
+    1. TOKEN=<YOUR-DISCORD-BOT-TOKEN\>
 6. Create a [Heroku](https://heroku.com) account.
 7. Create a new app in Heroku.
 8. Deploy this repository using Github or Heroku CLI.
