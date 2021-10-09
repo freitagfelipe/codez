@@ -13,12 +13,11 @@ class MyClient(discord.Client):
         print("I'm ready!")
     
     async def on_message(self, message):
-        if(not(message.author.bot)):
-            if(message.content.startswith(".run")):
+        if (not(message.author.bot)):
+            if (message.content.startswith(".run")):
                 await run.run(message, self)
-            elif(message.content.startswith(".command")):
+            elif (message.content.startswith(".command")):
                 await command.command(message, self)
     
 client = MyClient()
-
 client.run(getenv("TOKEN"))

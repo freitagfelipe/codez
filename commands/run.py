@@ -17,7 +17,7 @@ def separateString(message):
     language = message.pop(0)
     code = "\n".join(message)
 
-    if(inputs == ""):
+    if (inputs == ""):
         inputs = None
     else:
         inputs = inputs.split("\n")
