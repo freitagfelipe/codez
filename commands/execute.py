@@ -40,7 +40,12 @@ class Execute(Cog):
             case [_, *code]:
                 args = code
 
-        index = args.index("```")
+        count = sum(1 if "```" in arg else 0 for arg in args)
+
+        if count > 1:
+            raise Exception('Make sure to don\'t insert more than two "```"! See ".usage".')
+
+        index = args.index("```", -1)
 
         code, inputs = args[:index], args[index + 1:]
 
