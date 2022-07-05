@@ -8,28 +8,22 @@
     - [Pyston](https://github.com/ffaanngg/pyston)
     - [Dotenv](https://pypi.org/project/python-dotenv/)
 
-## How to host
+#### .commands
+- Description: send a list of all my commands
+- Usage: .commands
 
-1. Go in [Discord applications](https://discord.com/developers/applications).
-2. Create a new application with send messages permission and save the bot token.
-3. Download this repository.
-4. In your repository folder open a terminal and type pip install -r requirements.txt
-5. Create a .env file and paste it inside:
-    1. TOKEN=<YOUR-DISCORD-BOT-TOKEN\>
-6. Create a [Heroku](https://heroku.com) account.
-7. Create a new app in Heroku.
-8. Deploy this repository using Github or Heroku CLI.
-9. Set the bot token in Heroku's eviroment variables.
+#### .execute
+- Description: execute a code
+- Usage: see .usage for more information about this command
 
-**Don't share your keys with anyone!**
+#### .help
+- Description: send a message with help about my commands
+- Usage: .help or .help <command\>
 
-## Commands help
+#### .languages
+- Description: send my supported languages
+- Usage: .languages
 
-#### .command
-- Description: explain how to use .run
-- Usage: .command
-
-#### .run
-- Description: run a code
-- Usage:<br/>
-![Usage](https://raw.githubusercontent.com/freitagfelipe/codez/main/medias/usageExample.png)
+#### .usage
+- Description: send a how to use execute png
+- Usage: .usage
