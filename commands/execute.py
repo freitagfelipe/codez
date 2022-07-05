@@ -61,8 +61,7 @@ class Execute(Cog):
             arguments["language"] = language.lower()
 
             if not arguments["language"] in self.languages:
-                raise Exception("Unsupported language!\
-                    See .languages for a list of my supported languages.")
+                raise Exception("Unsupported language! See .languages for a list of my supported languages.")
 
             arguments["output"] = await self.execute_code(arguments)
             arguments["end"] = "---Your output finish here!---"
