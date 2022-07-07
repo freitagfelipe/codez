@@ -37,20 +37,25 @@ class Execute(Cog):
         args: list[str] = []
 
         match arguments:
-            case [_, *code]:
-                args = code
+            case [_, *content]:
+                args = content
 
         count = sum(1 if "```" in arg else 0 for arg in args)
 
-        if count > 1:
+        if count == 0:
+            raise Exception('Wrong command usage! See ".usage"!')
+        elif count > 1:
             raise Exception('Make sure to don\'t insert more than two "```"! See ".usage".')
 
-        index = args.index("```", -1)
+        index = args.index("```", 0)
 
         code, inputs = args[:index], args[index + 1:]
 
         if inputs == []:
             inputs = ""
+        
+        if code == [] or code.count('') == len(code):
+            raise Exception('You need to insert a code to execute! See ".usage".')
 
         return {"code": "\n".join(code), "inputs": "\n".join(inputs)}
 
@@ -70,12 +75,9 @@ class Execute(Cog):
 
             arguments["output"] = await self.execute_code(arguments)
             arguments["end"] = "---Your output finish here!---"
-            arguments["inputs"] = arguments["inputs"] or None
+            arguments["inputs"] = arguments["inputs"].split("\n") if arguments["inputs"] else None
 
-            description_arg = "The language is: {language}\n\n\
-                Your code:\n```{language}\n{code}```\n\
-                Your input: ```{inputs}```\nYour output:\n\
-                ```\n{output}{end}```".format(**arguments)
+            description_arg = "The language is: {language}\n\nYour code:\n```{language}\n{code}\n```\nYour input: \n```{inputs}```\nYour output:\n```\n{output}{end}```".format(**arguments)
 
             embed = Embed(
                 title="Here is your output!",
