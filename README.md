@@ -1,12 +1,14 @@
 # [CodeZ](http://gg.gg/codez-bot)
 
-- This is a Discord Bot that serves as a compilation and interpretation method inside Discord Chat. It receives your code as a chat text and does the compilation/interpretation of it, delivering the correspondent output.
+- This is a Discord bot that serves as a compilation and interpretation method inside Discord chat. It receives your code as a message and does the compilation or interpretation of it, delivering the correspondent output.
 
 ## How CodeZ was made
 
-- CodeZ is written in Python, using [Discord.py](https://discordpy.readthedocs.io/en/stable/) lib to communicate with Discord API and other libs like:
-    - [Pyston](https://github.com/ffaanngg/pyston)
-    - [Dotenv](https://pypi.org/project/python-dotenv/)
+- CodeZ is written in Python, using [discord.py](https://discordpy.readthedocs.io/en/stable/) library to communicate with Discord API and other libraries like:
+    - [pyston](https://github.com/ffaanngg/pyston)
+    - [python-dotenv](https://pypi.org/project/python-dotenv/)
+
+## CodeZ commands
 
 #### .commands
 - Description: send a list of all my commands
