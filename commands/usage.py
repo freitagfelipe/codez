@@ -2,10 +2,7 @@ from discord import Embed
 from discord.ext import commands
 from discord.ext.commands import Context
 from discord.ext.commands import Cog, Bot
-from dotenv import load_dotenv
 from os import getenv
-
-load_dotenv(".env")
 
 
 class Usage(Cog):
