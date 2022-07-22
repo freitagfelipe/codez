@@ -25,7 +25,7 @@ async def on_command_error(ctx: Context, error):
     if isinstance(error, MissingRequiredArgument):
         await ctx.reply("Please make sure to send all arguments!")
     elif isinstance(error, CommandNotFound):
-        await ctx.reply("This command doesn't exist! Type .commands or .help to see all my commands!")
+        pass
     else:
         raise error
 
