@@ -12,20 +12,24 @@
 
 #### .commands
 - Description: send a list of all my commands
-- Usage: .commands
+- Usage: ?commands
+- Has slash version: true
 
 #### .execute
-- Description: execute a code
-- Usage: see .usage for more information about this command
-
-#### .help
-- Description: send a message with help about my commands
-- Usage: .help or .help <command\>
+- Description: executes a given code
+- Usage: see ?usage for more information about this command
+- Has slash version: false
 
 #### .languages
 - Description: send my supported languages
-- Usage: .languages
+- Usage: ?languages
+- Has slash version: true
 
 #### .usage
-- Description: send a how to use execute png
-- Usage: .usage
+- Description: send an image that teaches you how to use the execute command
+- Usage: ?usage
+- Has slash version: true
+
+## Acknowledgments
+
+- [Antonio Lucas](https://github.com/antoniolucas30) for the README typo review!
