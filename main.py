@@ -1,36 +1,40 @@
-from discord import Status, Game
+import asyncio
+import os
+import dotenv
+import discord
+from codez import setup
 from discord.ext import commands
-from discord.ext.commands import Context
-from discord.ext.commands.errors import MissingRequiredArgument
-from discord.ext.commands.errors import CommandNotFound
-from dotenv import load_dotenv
-from os import getenv, listdir
 
-load_dotenv(".env")
-
-bot = commands.Bot(".")
+dotenv.load_dotenv()
 
 
-@bot.event
-async def on_ready():
-    game = Game('Type ".commands"!')
+class Bot(commands.Bot):
+    def __init__(self):
+        intents = discord.Intents.default()
+        intents.message_content = True
+        super().__init__(command_prefix="?", intents=intents, help_command=None)
 
-    await bot.change_presence(status=Status.online, activity=game)
+        self.synced = False
 
-    print("I'm Codez and I'm ready!")
+    async def on_ready(self):
+        await self.wait_until_ready()
+
+        if not self.synced:
+            await self.tree.sync()
+
+            self.synced = True
+
+        print(f"We have logged in as {self.user}.")
+        print("I'm CodeZ and I'm ready!")
 
 
-@bot.event
-async def on_command_error(ctx: Context, error):
-    if isinstance(error, MissingRequiredArgument):
-        await ctx.reply("Please make sure to send all arguments!")
-    elif isinstance(error, CommandNotFound):
-        pass
-    else:
-        raise error
+bot = Bot()
 
-for file in listdir("./commands/"):
-    if file.endswith(".py"):
-        bot.load_extension(f'commands.{file[:-3]}')
 
-bot.run(getenv("TOKEN"))
+async def main():
+    async with bot:
+        await setup.configure(bot)
+        await bot.start(os.environ["TOKEN"])
+
+
+asyncio.run(main())
