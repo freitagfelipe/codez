@@ -37,7 +37,7 @@ def format_code(arguments: list) -> dict[str, str]:
     if count == 0:
         raise Reason('Wrong command usage! See ".usage"!')
     elif count > 1:
-        raise Reason('Make sure to don\'t insert more than two "```"! See ".usage".')
+        raise Reason('Make sure to do not insert more than two "```"! See ".usage".')
 
     index = args.index("```", 0)
 

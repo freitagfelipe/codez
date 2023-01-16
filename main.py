@@ -25,7 +25,7 @@ class Bot(commands.Bot):
             self.synced = True
 
         print(f"We have logged in as {self.user}.")
-        print("I'm CodeZ and I'm ready!")
+        print("I am CodeZ and I am ready!")
 
 
 bot = Bot()
