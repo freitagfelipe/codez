@@ -3,15 +3,16 @@ from discord.ext import commands
 from discord.ext.commands import Context, Bot
 
 
-@commands.hybrid_command(
-    with_app_command=True, description="Send a list of all my commands"
-)
+@commands.hybrid_command(with_app_command=True)
 async def commands(ctx: Context):
     commands = [
-        "commands(has slash version) - send a list of all my commands",
-        "execute - executes a given code",
-        "languages(has slash version) - send my supported languages",
-        "usage(has slash version) - send an image that teaches you how to use the execute command",
+        "(?/) about - sends informations about the bot",
+        "(?/) commands - sends a list of all my commands",
+        "(??) execute - executes a given code",
+        "(?/) languages - sends my supported languages",
+        "(?/) usage - sends an image that teaches you how to use the execute command",
+        '\nIf the "?" is present in the command description that means you can execute the command like ?<command>',
+        'If the "/" is present in the command description that means you can execute the command like /<command>',
     ]
 
     embed_arg = Embed(

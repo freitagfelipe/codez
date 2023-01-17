@@ -3,9 +3,7 @@ from discord.ext import commands
 from discord.ext.commands import Context, Bot
 
 
-@commands.hybrid_command(
-    with_app_command=True, description="Send my supported languages"
-)
+@commands.hybrid_command(with_app_command=True)
 async def languages(ctx: Context):
     embed_arg = Embed(
         title="My supported languages",
