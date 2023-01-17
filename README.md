@@ -10,23 +10,32 @@
 
 ## CodeZ commands
 
-#### .commands
-- Description: send a list of all my commands
+#### about
+- Description: sends informations about the bot
+- Usage: ?about
+- Has slash version: true
+
+#### commands
+
+- Description: sends a list of all my commands
 - Usage: ?commands
 - Has slash version: true
 
-#### .execute
+#### execute
+
 - Description: executes a given code
 - Usage: see ?usage for more information about this command
 - Has slash version: false
 
-#### .languages
-- Description: send my supported languages
+#### languages
+
+- Description: sends my supported languages
 - Usage: ?languages
 - Has slash version: true
 
-#### .usage
-- Description: send an image that teaches you how to use the execute command
+#### usage
+
+- Description: sends an image that teaches you how to use the execute command
 - Usage: ?usage
 - Has slash version: true
 
