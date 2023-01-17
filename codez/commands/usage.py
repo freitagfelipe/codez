@@ -4,10 +4,7 @@ from discord.ext import commands
 from discord.ext.commands import Context, Bot
 
 
-@commands.hybrid_command(
-    with_app_command=True,
-    description="Send an image that teaches you how to use execute",
-)
+@commands.hybrid_command(with_app_command=True)
 async def usage(ctx: Context):
     url_arg = os.environ["CONTENT_URL"]
 
