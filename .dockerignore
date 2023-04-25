@@ -1,0 +1,6 @@
+fly.toml
+.env.example
+.git
+.gitignore
+LICENSE
+README.md

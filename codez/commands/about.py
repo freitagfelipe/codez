@@ -3,7 +3,7 @@ from discord.ext import commands
 from discord.ext.commands import Context, Bot
 
 
-@commands.hybrid_command(with_app_command=True)
+@commands.hybrid_command(with_app_command=True, description="Sends informations about the bot")
 async def about(ctx: Context):
     embed_arg = Embed(
         title="About",
