@@ -3,6 +3,9 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
+[scripts]
+start = "python3 main.py"
+
 [packages]
 "discord.py" = "==2.0.1"
 aiopyston = "==1.2.1"
