@@ -3,7 +3,7 @@ from discord.ext import commands
 from discord.ext.commands import Context, Bot
 
 
-@commands.hybrid_command(with_app_command=True)
+@commands.hybrid_command(with_app_command=True, description="Sends a list of all my commands")
 async def commands(ctx: Context):
     commands = [
         "(?/) about - sends informations about the bot",
