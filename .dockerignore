@@ -4,3 +4,6 @@ fly.toml
 .gitignore
 LICENSE
 README.md
+medias
+Dockerfile
+.dockerignore
